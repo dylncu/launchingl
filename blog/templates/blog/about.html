@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="aboutpage">
+  <div class = "aboutgrid">
+
+    <div class = "aboutphotosgrid">
+      {% for type in types %}
+        {% for i in type.latestimages.all %}
+
+        <div class="aboutpictures">
+          <a href="{% url 'blog:postdetail' pk=i.post.pk %}">
+          <img class="aboutpicture" src="{{i.image.url}}" />
+
+          </a>
+
+        </div>
+
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    <div class = "abouttext">
+      <h1 class="aboutheading">About</h1>
+      <hr class="abouthr" />
+      <p>Hello all and welcome to my personal blog, you can call me L.
+        I am an audacious young woman trying to find myself. I
+        enjoy adventures, both big and small, as well as sharing them.
+        I’m especially fond of those including travel, food, fashion
+        or beauty, and am always trying new things.
+        I’d love to share my journey of self-discovery and adventure
+        with others in hope of sparking an exploratory flame in them, too.</p>
+        <p>I’m launching L.</p>
+        <div class="iconsdetailpage">
+          <a href="https://www.instagram.com/launchingl/" class="fa fa-instagram"></a>
+          <a href="https://twitter.com/LaunchingL" class="fa fa-twitter"></a>
+          <a href="https://www.facebook.com/Launching.L/" class="fa fa-facebook"></a>
+        </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

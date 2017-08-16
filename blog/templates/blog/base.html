@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>launchingl</title>
+    <link href="https://fonts.googleapis.com/css?family=Italianno|Lily+Script+One|Lovers+Quarrel|Monsieur+La+Doulaise|Princess+Sofia|Rochester|Ruthie|Sofia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dosis|Josefin+Sans|Josefin+Slab|Noto+Sans|Open+Sans+Condensed:300|Playfair+Display|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  </head>
+  <body>
+    <ul class="topnav">
+      <div class="navcenter">
+        <li class="brand">Launching L</li>
+        <div class="navpushed">
+          <li><a href="{% url 'blog:index' %}">home</a></li>
+          <li><a href="{% url 'blog:posts' %}">posts</a></li>
+          <li><a href="{% url 'blog:about' %}">about</a></li>
+        </div>
+      </div>
+    </ul>
+
+      {% block content %}
+      {% endblock %}
+
+  </body>

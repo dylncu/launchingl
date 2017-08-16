@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class = "wrapper">
+<div class="detailpage">
+  <div class="detailpagegrid">
+    <div class="detailpicturesgrid">
+    {% for image in post.images.all %}
+      <div class="detailpictures">
+        <img class="detailpicturespicture" src="{{ image.image.url }}">
+      </div>
+    {% endfor %}
+    </div>
+    <div class="detailtext">
+      <div>
+        <h1 class="posttitle">{{post.title}}</h1>
+        <h4 class="postdate"> {{post.ptype}} | {{post.published_date|date:"d M Y"}}</h4>
+        <p>{{post.text|linebreaksbr }}</p>
+        <input class="buttons backtopost" type="button" value="back to posts" onclick="history.back()">
+        <div class="iconsdetailpage">
+          <a href="https://www.instagram.com/launchingl/" class="fa fa-instagram"></a>
+          <a href="https://twitter.com/LaunchingL" class="fa fa-twitter"></a>
+          <a href="https://www.facebook.com/Launching.L/" class="fa fa-facebook"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

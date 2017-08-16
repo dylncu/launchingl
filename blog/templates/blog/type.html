@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="typepage">
+  <div class="typepagegrid">
+  {% for type in types %}
+  <div class = "typesquare">
+    <a href = "{% url 'blog:postbytype' posttypefilter=type.posttype %}">
+      <p class="typetag">{{type.posttype}}</p>
+      <div class="overlay"><p class="typetag">{{type.posttype}}</p></div>
+    </a>
+    <img class="typepicture" src="{{type.latestimage.image.url}}" />
+
+
+  </div>
+  {% endfor %}
+  </div>
+
+</div>
+
+
+{% endblock %}
